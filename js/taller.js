@@ -112,6 +112,7 @@
             "<h1>Taller <span>NSQK</span></h1>" +
             "<p>Aquí aprendes a construir cada parte del sitio del equipo. Cada lección te explica un tema, " +
             "te dice en qué parte de la enciclopedia lo vimos y te deja escribir el código para que veas, en ese mismo momento, cómo se acomoda.</p>" +
+            '<a href="meta/index.html" target="_blank" class="boton boton-principal" style="display:inline-block;margin-top:8px;text-decoration:none">Ver la página terminada (la meta) ↗</a>' +
             "</section>" +
             '<div class="pasos">' +
             '<div class="paso"><b>1. Lee</b><p>La explicación corta y la referencia a la enciclopedia o a la actividad donde ya lo vimos.</p></div>' +
@@ -139,7 +140,8 @@
 
         const encabezado =
             '<div class="encabezado-leccion">' +
-            '<span class="ruta-capitulo">Capítulo ' + cap.numero + " · " + cap.titulo + " · " + cap.archivo + "</span>" +
+            '<span class="ruta-capitulo">Capítulo ' + cap.numero + " · " + cap.titulo + " · " + cap.archivo +
+            '<a href="meta/' + cap.meta + '" target="_blank" class="ver-meta-pagina">Ver esta página terminada ↗</a></span>' +
             "<h1>" + lec.id + " " + lec.titulo + "</h1></div>";
 
         const navegacion =

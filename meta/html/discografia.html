@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NSQK | Discografía</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../css/estilos.css">
+</head>
+<body class="bg-black text-neutral-300">
+
+    <header class="sticky top-0 z-50 bg-black border-b border-neutral-800">
+        <nav class="flex flex-col md:flex-row justify-between items-center gap-3 px-6 py-4">
+            <a href="../index.html" class="logo text-3xl text-white">NSQK</a>
+            <ul class="flex flex-wrap justify-center gap-x-5 gap-y-1 text-sm uppercase font-bold">
+                <li><a href="../index.html" class="hover:text-[#d9f20b] transition">Inicio</a></li>
+                <li><a href="biografia.html" class="hover:text-[#d9f20b] transition">Biografía</a></li>
+                <li><a href="discografia.html" class="text-[#d9f20b]">Discografía</a></li>
+                <li><a href="tour.html" class="hover:text-[#d9f20b] transition">Tour</a></li>
+                <li><a href="fans.html" class="hover:text-[#d9f20b] transition">Club de fans</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Banda con video de conciertos de fondo y el titulo encima -->
+    <section class="relative overflow-hidden text-center px-6 py-24 md:py-32">
+        <video src="../multimedia/conciertos.mp4" class="absolute inset-0 w-full h-full object-cover" autoplay muted loop playsinline poster="../imagenes/nsqk-escenario.jpg"></video>
+        <!-- relative para que el texto quede encima del video; sombra para que se lea -->
+        <div class="relative drop-shadow-[0_4px_12px_rgba(0,0,0,0.9)]">
+            <h1 class="text-5xl md:text-8xl text-white leading-none">Discografía</h1>
+            <p class="text-[#d9f20b] font-bold uppercase tracking-widest text-sm mt-3">Todos sus lanzamientos son con Honey Records</p>
+        </div>
+    </section>
+
+    <main class="max-w-6xl mx-auto px-6 py-12">
+
+        <!-- 1 columna en celular, 2 en tablet, 4 en escritorio -->
+        <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+            <article class="bg-neutral-900 rounded-xl overflow-hidden hover:-translate-y-2 transition duration-300">
+                <img src="../imagenes/botanica.jpg" alt="Portada del EP Botánica de NSQK: él de niño saltando en un parque" class="w-full">
+                <div class="p-5">
+                    <span class="bg-neutral-800 text-xs uppercase font-bold rounded-full px-3 py-1">EP</span>
+                    <h2 class="text-xl text-white mt-3">Botánica</h2>
+                    <p class="text-sm text-neutral-400 mb-4">31 de enero de 2020</p>
+                    <p class="text-sm">Su debut: mezcla de pop, rap, R&amp;B y electrónica.</p>
+                </div>
+            </article>
+
+            <article class="bg-neutral-900 rounded-xl overflow-hidden hover:-translate-y-2 transition duration-300">
+                <img src="../imagenes/roy.jpg" alt="Portada del álbum Roy de NSQK: su cara tapada con el brazo tatuado" class="w-full">
+                <div class="p-5">
+                    <span class="bg-neutral-800 text-xs uppercase font-bold rounded-full px-3 py-1">Álbum</span>
+                    <h2 class="text-xl text-white mt-3">Roy</h2>
+                    <p class="text-sm text-neutral-400 mb-4">23 de noviembre de 2022</p>
+                    <p class="text-sm">Su primer álbum de estudio, el que lo llevó a Ceremonia y Lollapalooza.</p>
+                </div>
+            </article>
+
+            <article class="bg-neutral-900 rounded-xl overflow-hidden hover:-translate-y-2 transition duration-300">
+                <img src="../imagenes/atp.jpg" alt="Portada del mixtape ATP de NSQK: sonrisa con un grill que dice ATP" class="w-full">
+                <div class="p-5">
+                    <span class="bg-neutral-800 text-xs uppercase font-bold rounded-full px-3 py-1">Mixtape</span>
+                    <h2 class="text-xl text-white mt-3">ATP</h2>
+                    <p class="text-sm text-neutral-400 mb-4">14 de agosto de 2024</p>
+                    <p class="text-sm">Lugar 82 en los mejores álbumes de 2024 de Rolling Stone.</p>
+                </div>
+            </article>
+
+            <article class="bg-neutral-900 rounded-xl overflow-hidden border border-[#d9f20b] hover:-translate-y-2 transition duration-300">
+                <img src="../imagenes/mosca-portada.jpg" alt="Portada del álbum mosca de NSQK: un dálmata enseñando los dientes sobre fondo azul" class="w-full">
+                <div class="p-5">
+                    <span class="bg-[#d9f20b] text-black text-xs uppercase font-bold rounded-full px-3 py-1">Nuevo</span>
+                    <h2 class="text-xl text-white mt-3">mosca</h2>
+                    <p class="text-sm text-neutral-400 mb-4">15 de octubre de 2026</p>
+                    <p class="text-sm">17 canciones inspiradas en <em>La metamorfosis</em> de Kafka.</p>
+                </div>
+            </article>
+
+        </section>
+
+    </main>
+
+    <footer class="bg-black border-t border-neutral-800 text-center text-sm py-8 px-6 mt-12">
+        <p>Blog de fans de NSQK · Programación Web 5-D · FIME, Universidad de Colima</p>
+        <p class="text-neutral-500 mt-1">Proyecto escolar sin fines de lucro.</p>
+    </footer>
+
+</body>
+</html>

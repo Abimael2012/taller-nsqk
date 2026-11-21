@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NSQK | Inicio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body class="bg-black text-neutral-300">
+
+    <!-- Header: igual en todas las paginas, solo cambian las rutas -->
+    <header class="sticky top-0 z-50 bg-black border-b border-neutral-800">
+        <nav class="flex flex-col md:flex-row justify-between items-center gap-3 px-6 py-4">
+            <a href="index.html" class="logo text-3xl text-white">NSQK</a>
+            <ul class="flex flex-wrap justify-center gap-x-5 gap-y-1 text-sm uppercase font-bold">
+                <li><a href="index.html" class="text-[#d9f20b]">Inicio</a></li>
+                <li><a href="html/biografia.html" class="hover:text-[#d9f20b] transition">Biografía</a></li>
+                <li><a href="html/discografia.html" class="hover:text-[#d9f20b] transition">Discografía</a></li>
+                <li><a href="html/tour.html" class="hover:text-[#d9f20b] transition">Tour</a></li>
+                <li><a href="html/fans.html" class="hover:text-[#d9f20b] transition">Club de fans</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- Banner: el video ya trae el logo, solo va el boton abajo -->
+        <section class="relative">
+            <video src="multimedia/banner.mp4" class="banner-video w-full" autoplay muted loop playsinline poster="imagenes/mosca-portada.jpg"></video>
+            <div class="absolute bottom-8 inset-x-0 text-center">
+                <a href="https://open.spotify.com/album/5CIFqAiWMZ4ZxS9BvUBC6q" target="_blank" class="inline-block bg-[#d9f20b] text-black font-bold uppercase px-8 py-3 rounded-full shadow-xl hover:bg-white transition">Escuchar ahora</a>
+            </div>
+        </section>
+
+        <!-- Quien es -->
+        <!-- La foto va a todo lo ancho; en compu el texto se pone encima, en el lado del humo -->
+        <section class="relative">
+            <!-- en celular se recorta para que se vea el Rodri (que esta a la izquierda de la foto) -->
+            <img src="imagenes/nsqk.jpg" alt="NSQK en el escenario con lentes oscuros y saco gris, entre humo y luces azules" class="foto-banda block w-full h-[55vh] md:h-auto object-cover object-[15%_center]">
+
+            <article class="px-6 py-10 md:py-0 md:absolute md:inset-y-0 md:right-0 md:w-1/2 md:flex md:flex-col md:justify-center md:pr-16 lg:pr-48">
+                <h1 class="text-4xl md:text-5xl text-white mb-4">¿Quién es <span class="text-[#d9f20b]">NSQK</span>?</h1>
+                <p class="mb-4">Rodrigo Torres de la Garza, "el Rodri", es un cantante, rapero y productor nacido en Monterrey en 1998 y criado en Houston, Texas. Su nombre artístico se pronuncia "Nesquik".</p>
+                <p class="mb-6">Mezcla pop, rap, R&amp;B y rock alternativo, y con <em>ATP</em> y <em>mosca</em> se volvió uno de los nombres más fuertes de la música mexicana actual.</p>
+                <a href="html/biografia.html" class="text-[#d9f20b] font-bold uppercase hover:text-white transition">Leer biografía →</a>
+            </article>
+        </section>
+
+        <!-- Album mosca, en el azul del poster -->
+        <section class="bg-[#1f1fff] text-white">
+            <div class="max-w-5xl mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-2 gap-10">
+                <article>
+                    <h2 class="text-5xl mb-4">mosca <span class="text-[#d9f20b]">2026</span></h2>
+                    <p class="mb-4">Nació de una plaga de moscas en su departamento y de un libro que le regalaron: <em>La metamorfosis</em> de Kafka. Habla de dudas, de relaciones que terminan y de lo que cambia con la fama.</p>
+                    <ul class="mb-6 space-y-1">
+                        <li><strong class="text-[#d9f20b]">Lanzamiento:</strong> 15 de octubre de 2026</li>
+                        <li><strong class="text-[#d9f20b]">Canciones:</strong> 17</li>
+                        <li><strong class="text-[#d9f20b]">Sello:</strong> Honey Records</li>
+                        <li><strong class="text-[#d9f20b]">Colaboran:</strong> Julieta Venegas, Kevin Kaarl, Jean Dawson, Eslabón Armado, Nina y Riosse</li>
+                    </ul>
+                    <button id="boton-canciones" class="bg-[#d9f20b] text-black font-bold uppercase px-5 py-2 rounded-full hover:bg-white transition">Ver canciones</button>
+                    <button id="boton-ocultar" class="border-2 border-white font-bold uppercase px-5 py-2 rounded-full hover:bg-white hover:text-[#1f1fff] transition">Ocultar</button>
+                </article>
+                <article>
+                    <video id="video-perro" src="multimedia/perro.webm" class="w-full mb-4 cursor-pointer" autoplay muted loop playsinline poster="imagenes/mosca-perro.png" title="El dálmata de mosca ladrando"></video>
+                    <ol id="lista-canciones" class="list-decimal list-inside space-y-1"></ol>
+                </article>
+            </div>
+        </section>
+
+        <!-- Fecha del concierto -->
+        <section class="bg-black px-6 py-16 text-center">
+            <p class="text-[#d9f20b] uppercase font-bold tracking-widest text-sm">En vivo</p>
+            <h2 class="text-5xl md:text-7xl text-white mt-2">Estadio GNP Seguros</h2>
+            <p class="text-2xl md:text-3xl text-white mt-2">CDMX · 23 de enero, 2027</p>
+            <p class="mt-4">Y 22 ciudades más de enero a abril.</p>
+            <a href="html/tour.html" class="inline-block mt-6 bg-[#1f1fff] text-white font-bold uppercase px-8 py-3 rounded-full shadow-xl hover:bg-[#d9f20b] hover:text-black transition">Ver todo el tour</a>
+        </section>
+
+        <!-- Accesos a las subpaginas -->
+        <section class="max-w-5xl mx-auto px-6 pb-16">
+            <h2 class="text-4xl text-white mb-8 text-center">Explora</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <article class="bg-neutral-900 p-6 rounded-xl border-2 border-transparent hover:border-[#d9f20b] hover:-translate-y-2 transition duration-300">
+                    <h3 class="text-2xl text-white mb-2">Biografía</h3>
+                    <p class="mb-4 text-sm">De Monterrey a Houston y de Botánica a mosca.</p>
+                    <a href="html/biografia.html" class="text-[#d9f20b] font-bold">Entrar →</a>
+                </article>
+                <article class="bg-neutral-900 p-6 rounded-xl border-2 border-transparent hover:border-[#d9f20b] hover:-translate-y-2 transition duration-300">
+                    <h3 class="text-2xl text-white mb-2">Discografía</h3>
+                    <p class="mb-4 text-sm">Sus cuatro lanzamientos principales.</p>
+                    <a href="html/discografia.html" class="text-[#d9f20b] font-bold">Entrar →</a>
+                </article>
+                <article class="bg-neutral-900 p-6 rounded-xl border-2 border-transparent hover:border-[#d9f20b] hover:-translate-y-2 transition duration-300">
+                    <h3 class="text-2xl text-white mb-2">Tour</h3>
+                    <p class="mb-4 text-sm">Las 23 fechas del mosca tour en México.</p>
+                    <a href="html/tour.html" class="text-[#d9f20b] font-bold">Entrar →</a>
+                </article>
+                <article class="bg-neutral-900 p-6 rounded-xl border-2 border-transparent hover:border-[#d9f20b] hover:-translate-y-2 transition duration-300">
+                    <h3 class="text-2xl text-white mb-2">Club de fans</h3>
+                    <p class="mb-4 text-sm">Regístrate y saca tu credencial.</p>
+                    <a href="html/fans.html" class="text-[#d9f20b] font-bold">Entrar →</a>
+                </article>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-black border-t border-neutral-800 text-center text-sm py-8 px-6">
+        <p>Blog de fans de NSQK · Programación Web 5-D · FIME, Universidad de Colima</p>
+        <p class="text-neutral-500 mt-1">Proyecto escolar sin fines de lucro.</p>
+    </footer>
+
+    <script src="js/canciones.js"></script>
+</body>
+</html>

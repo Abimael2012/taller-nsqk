@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NSQK | Club de fans</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../css/estilos.css">
+</head>
+<body class="bg-black text-neutral-300">
+
+    <header class="sticky top-0 z-50 bg-black border-b border-neutral-800">
+        <nav class="flex flex-col md:flex-row justify-between items-center gap-3 px-6 py-4">
+            <a href="../index.html" class="logo text-3xl text-white">NSQK</a>
+            <ul class="flex flex-wrap justify-center gap-x-5 gap-y-1 text-sm uppercase font-bold">
+                <li><a href="../index.html" class="hover:text-[#d9f20b] transition">Inicio</a></li>
+                <li><a href="biografia.html" class="hover:text-[#d9f20b] transition">Biografía</a></li>
+                <li><a href="discografia.html" class="hover:text-[#d9f20b] transition">Discografía</a></li>
+                <li><a href="tour.html" class="hover:text-[#d9f20b] transition">Tour</a></li>
+                <li><a href="fans.html" class="text-[#d9f20b]">Club de fans</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Banda con video de fondo y el titulo encima (igual que en discografia) -->
+    <section class="relative overflow-hidden text-center px-6 py-24 md:py-32">
+        <video src="../multimedia/fans.mp4" class="absolute inset-0 w-full h-full object-cover" autoplay muted loop playsinline></video>
+        <!-- relative para que el texto quede encima del video; sombra para que se lea -->
+        <div class="relative drop-shadow-[0_4px_12px_rgba(0,0,0,0.9)]">
+            <h1 class="text-5xl md:text-8xl text-white leading-none">Club de fans</h1>
+            <p class="text-[#d9f20b] font-bold uppercase tracking-widest text-sm mt-3">Llena tus datos y saca tu credencial</p>
+        </div>
+    </section>
+
+    <main class="max-w-5xl mx-auto px-6 py-12">
+
+        <section class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+            <form class="bg-neutral-900 p-6 rounded-xl">
+                <h2 class="text-2xl text-white mb-4">Registro</h2>
+
+                <label for="campo-nombre" class="block mb-1">Nombre</label>
+                <input type="text" id="campo-nombre" class="w-full bg-neutral-800 rounded-lg px-3 py-2 mb-4">
+
+                <label for="campo-ciudad" class="block mb-1">Ciudad</label>
+                <input type="text" id="campo-ciudad" class="w-full bg-neutral-800 rounded-lg px-3 py-2 mb-4">
+
+                <label for="campo-favorita" class="block mb-1">Tu canción favorita de mosca</label>
+                <select id="campo-favorita" class="w-full bg-neutral-800 rounded-lg px-3 py-2 mb-4">
+                    <option>SAMSA</option>
+                    <option>tuffluv</option>
+                    <option>Dientes De Fierro</option>
+                    <option>Canonizado</option>
+                    <option>Santurce</option>
+                    <option>Lo Tuvimos Pero Ya No Está</option>
+                    <option>¿Qué Tan Cerca Es Cerca?</option>
+                    <option>Mil Problemas</option>
+                    <option>Hombre De Bien</option>
+                    <option>SANGRE !</option>
+                    <option>Estar Así Siempre</option>
+                    <option>Peces Muertos</option>
+                    <option>No Basta Con Querernos Más</option>
+                    <option>Ghost In The Shell</option>
+                    <option>Circo</option>
+                    <option>Atrapado y Libre</option>
+                    <option>MARGOT</option>
+                </select>
+
+                <label for="campo-concierto" class="block mb-1">¿Vas al Estadio GNP el 23 de enero?</label>
+                <select id="campo-concierto" class="w-full bg-neutral-800 rounded-lg px-3 py-2 mb-6">
+                    <option>Sí</option>
+                    <option>No</option>
+                </select>
+
+                <!-- type="button" para que el formulario no recargue la pagina -->
+                <button type="button" id="boton-registrar" class="bg-[#d9f20b] text-black font-bold px-5 py-2 rounded-full hover:bg-white transition">Sacar credencial</button>
+            </form>
+
+            <section>
+                <h2 class="text-2xl text-white mb-4">Tu credencial</h2>
+                <div id="credencial" class="text-neutral-400">Aquí aparecerá tu credencial.</div>
+            </section>
+
+        </section>
+
+    </main>
+
+    <footer class="bg-black border-t border-neutral-800 text-center text-sm py-8 px-6 mt-12">
+        <p>Blog de fans de NSQK · Programación Web 5-D · FIME, Universidad de Colima</p>
+        <p class="text-neutral-500 mt-1">Proyecto escolar sin fines de lucro.</p>
+    </footer>
+
+    <script src="../js/fans.js"></script>
+</body>
+</html>

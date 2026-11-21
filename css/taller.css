@@ -84,7 +84,31 @@ pre code { background: none; border: 0; padding: 0; }
 
 .marca span { color: var(--verde); }
 
-.lema { color: var(--suave); font-size: 13px; margin: 6px 0 18px; }
+.lema { color: var(--suave); font-size: 13px; margin: 6px 0 12px; }
+
+/* Enlace a la pagina terminada (la meta completa) */
+.enlace-meta {
+    display: block;
+    text-align: center;
+    background: var(--azul);
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    text-decoration: none;
+    border-radius: 99px;
+    padding: 8px 12px;
+    margin-bottom: 18px;
+}
+
+.enlace-meta:hover { background: white; color: black; }
+
+.ver-meta-pagina {
+    display: inline-block;
+    margin-left: 10px;
+    font-size: 13px;
+    text-transform: none;
+    letter-spacing: 0;
+}
 
 .progreso-barra {
     height: 8px;

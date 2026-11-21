@@ -1,0 +1,84 @@
+/* Estilos propios que complementan a Tailwind */
+
+/* Paleta sacada del poster de mosca:
+   azul eléctrico #1f1fff, verde eléctrico #d9f20b, negro y blanco */
+
+/* Letra gruesa y angosta como en el poster */
+h1, h2, h3, .logo {
+    font-family: Impact, "Arial Narrow Bold", "Arial Black", sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* El video del banner: que llene el ancho sin deformarse */
+.banner-video {
+    height: 75vh;
+    object-fit: cover;
+}
+
+@media (max-width: 768px) {
+    .banner-video {
+        height: 60vh;
+    }
+}
+
+/* Foto del tour: se ve normal en el centro y se va haciendo transparente
+   hacia los lados y hacia abajo, asi no se nota ningun borde.
+   Es un ovalo: 50% de ancho, 60% de alto, con el centro un poco arriba */
+.foto-difuminada {
+    -webkit-mask-image: radial-gradient(ellipse 50% 60% at 50% 45%, black 55%, transparent 100%);
+    mask-image: radial-gradient(ellipse 50% 60% at 50% 45%, black 55%, transparent 100%);
+}
+
+/* Foto a todo lo ancho del index: se desvanece arriba y abajo
+   para que no se note donde empieza y termina */
+.foto-banda {
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 80%, transparent 100%);
+    mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 80%, transparent 100%);
+}
+
+/* ===== Efecto de tele vieja ===== */
+/* Son dos capas encima de toda la pagina. pointer-events: none
+   deja pasar los clics para que los botones sigan funcionando */
+
+/* Capa 1: la estatica (nieve). Es una imagen de ruido que brinca de lugar */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 99;
+    pointer-events: none;
+    background-image: url("../imagenes/ruido.png");
+    opacity: 0.08;
+    animation: estatica 0.4s steps(4) infinite;
+}
+
+/* Capa 2: rayas horizontales + esquinas oscuras, con un parpadeo suave */
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    pointer-events: none;
+    background-image:
+        radial-gradient(ellipse, transparent 60%, rgba(0, 0, 0, 0.55)),
+        linear-gradient(rgba(255, 255, 255, 0.05) 50%, rgba(0, 0, 0, 0.3) 50%);
+    background-size: 100% 100%, 100% 4px;
+    animation: parpadeo 0.15s infinite;
+}
+
+/* Mueve la imagen de ruido para que parezca que la nieve se mueve */
+@keyframes estatica {
+    0%   { background-position: 0 0; }
+    25%  { background-position: -60px 40px; }
+    50%  { background-position: 50px -70px; }
+    75%  { background-position: -30px -20px; }
+    100% { background-position: 0 0; }
+}
+
+/* Cambia un poquito la transparencia, como cuando la tele tiembla */
+@keyframes parpadeo {
+    0%   { opacity: 0.9; }
+    50%  { opacity: 1; }
+    100% { opacity: 0.9; }
+}

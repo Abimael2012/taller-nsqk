@@ -10,13 +10,13 @@ function bloque(texto) {
 const ENCI = "Enciclopedia_Abimael → ";
 
 window.CAPITULOS = [
-    { numero: 0, titulo: "Antes de empezar", archivo: "todo el proyecto", descripcion: "Rutas, el atributo alt y cómo subir tu parte a GitHub." },
-    { numero: 1, titulo: "Inicio", archivo: "index.html + js/canciones.js", descripcion: "Header que se pega, video, posicionar con píxeles, la paleta, grid responsivo y tu primer botón con JS." },
-    { numero: 2, titulo: "Biografía", archivo: "html/biografia.html", descripcion: "Títulos en orden y la tabla de la línea de tiempo." },
-    { numero: 3, titulo: "Discografía", archivo: "html/discografia.html", descripcion: "Tarjetas con efecto al pasar el mouse y la banda con video de fondo." },
-    { numero: 4, titulo: "Tour", archivo: "html/tour.html + js/tour.js", descripcion: "El catálogo interactivo que pide la actividad: arreglo de objetos, forEach y filtro." },
-    { numero: 5, titulo: "Club de fans", archivo: "html/fans.html + js/fans.js", descripcion: "El formulario que pide la actividad: muestra la credencial sin recargar la página." },
-    { numero: 6, titulo: "Toques finales", archivo: "css/estilos.css", descripcion: "El efecto de tele vieja y la foto que se desvanece en el fondo." }
+    { numero: 0, titulo: "Antes de empezar", archivo: "todo el proyecto", meta: "index.html", descripcion: "Rutas, el atributo alt y cómo subir tu parte a GitHub." },
+    { numero: 1, titulo: "Inicio", archivo: "index.html + js/canciones.js", meta: "index.html", descripcion: "Header que se pega, video, posicionar con píxeles, la paleta, grid responsivo y tu primer botón con JS." },
+    { numero: 2, titulo: "Biografía", archivo: "html/biografia.html", meta: "html/biografia.html", descripcion: "Títulos en orden y la tabla de la línea de tiempo." },
+    { numero: 3, titulo: "Discografía", archivo: "html/discografia.html", meta: "html/discografia.html", descripcion: "Tarjetas con efecto al pasar el mouse y la banda con video de fondo." },
+    { numero: 4, titulo: "Tour", archivo: "html/tour.html + js/tour.js", meta: "html/tour.html", descripcion: "El catálogo interactivo que pide la actividad: arreglo de objetos, forEach y filtro." },
+    { numero: 5, titulo: "Club de fans", archivo: "html/fans.html + js/fans.js", meta: "html/fans.html", descripcion: "El formulario que pide la actividad: muestra la credencial sin recargar la página." },
+    { numero: 6, titulo: "Toques finales", archivo: "css/estilos.css", meta: "index.html", descripcion: "El efecto de tele vieja y la foto que se desvanece en el fondo." }
 ];
 
 window.LECCIONES = [

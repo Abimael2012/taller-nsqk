@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NSQK | mosca tour</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../css/estilos.css">
+</head>
+<body class="bg-black text-neutral-300">
+
+    <header class="sticky top-0 z-50 bg-black border-b border-neutral-800">
+        <nav class="flex flex-col md:flex-row justify-between items-center gap-3 px-6 py-4">
+            <a href="../index.html" class="logo text-3xl text-white">NSQK</a>
+            <ul class="flex flex-wrap justify-center gap-x-5 gap-y-1 text-sm uppercase font-bold">
+                <li><a href="../index.html" class="hover:text-[#d9f20b] transition">Inicio</a></li>
+                <li><a href="biografia.html" class="hover:text-[#d9f20b] transition">Biografía</a></li>
+                <li><a href="discografia.html" class="hover:text-[#d9f20b] transition">Discografía</a></li>
+                <li><a href="tour.html" class="text-[#d9f20b]">Tour</a></li>
+                <li><a href="fans.html" class="hover:text-[#d9f20b] transition">Club de fans</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Foto del tour con el titulo encima -->
+    <section class="relative">
+        <!-- en compu la foto va completa pero maximo de 1024px de ancho (max-w-5xl),
+             asi no se hace gigante en monitores anchos; los lados se desvanecen en negro -->
+        <img src="../imagenes/nsqk-tour.jpg" alt="NSQK sonriendo y acomodándose los lentes oscuros, foto en blanco y negro" class="foto-difuminada block w-full h-[60vh] object-cover md:h-auto md:max-w-5xl md:mx-auto grayscale">
+        <!-- sombra negra en el texto para que se lea sobre la camisa blanca -->
+        <div class="absolute bottom-5 md:bottom-[14%] inset-x-0 text-center px-6 drop-shadow-[0_4px_12px_rgba(0,0,0,0.9)]">
+            <h1 class="text-5xl md:text-7xl text-white leading-none">mosca <span class="text-[#d9f20b]">tour</span></h1>
+            <p class="text-white uppercase tracking-widest text-sm mt-3">23 fechas en México · enero a abril 2027</p>
+        </div>
+    </section>
+
+    <!-- en compu el contenido sube para quedar encima de la parte difuminada de la foto -->
+    <main class="relative max-w-6xl mx-auto px-6 py-12 md:-mt-28">
+
+        <!-- Filtro por mes: fondo un poco transparente para que se vea la foto atras -->
+        <section class="bg-neutral-900/60 rounded-xl p-6 mb-8 flex flex-col md:flex-row md:items-end gap-4">
+            <div class="md:w-64">
+                <label for="campo-mes" class="block mb-1">Filtrar por mes</label>
+                <select id="campo-mes" class="w-full bg-neutral-800 rounded-lg px-3 py-2">
+                    <option>Todos</option>
+                    <option>Enero</option>
+                    <option>Febrero</option>
+                    <option>Marzo</option>
+                    <option>Abril</option>
+                </select>
+            </div>
+            <button id="boton-filtrar" class="bg-[#d9f20b] text-black font-bold uppercase px-6 py-2 rounded-full hover:bg-white transition">Filtrar</button>
+            <p class="md:ml-auto">Mostrando <span id="contador-fechas" class="text-[#d9f20b] font-bold">0</span> fechas</p>
+        </section>
+
+        <!-- Aqui el JS pinta las tarjetas -->
+        <section id="lista-fechas" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></section>
+
+        <p class="text-neutral-500 text-sm mt-10">Fechas y boleteras tomadas de OCESA, Milenio, Alafuga, Infobae y Posta (octubre 2026). Donde no se ha anunciado la boletera, los boletos se venden en la taquilla del recinto.</p>
+
+    </main>
+
+    <footer class="bg-black border-t border-neutral-800 text-center text-sm py-8 px-6 mt-12">
+        <p>Blog de fans de NSQK · Programación Web 5-D · FIME, Universidad de Colima</p>
+        <p class="text-neutral-500 mt-1">Proyecto escolar sin fines de lucro.</p>
+    </footer>
+
+    <script src="../js/tour.js"></script>
+</body>
+</html>
