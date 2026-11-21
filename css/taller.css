@@ -1,0 +1,430 @@
+/* Taller NSQK: estilos de la herramienta (no del proyecto) */
+
+:root {
+    --fondo: #0a0a0a;
+    --panel: #141414;
+    --panel-2: #1c1c1c;
+    --borde: #2a2a2a;
+    --texto: #d4d4d4;
+    --suave: #8f8f8f;
+    --azul: #1f1fff;
+    --verde: #d9f20b;
+    --rojo: #f87171;
+    --bien: #4ade80;
+    --codigo: #0d0d14;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    background-color: var(--fondo);
+    color: var(--texto);
+    font-family: "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
+    line-height: 1.6;
+}
+
+h1, h2, h3, .marca {
+    font-family: Impact, "Arial Narrow Bold", "Arial Black", sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: normal;
+    color: white;
+    line-height: 1.1;
+}
+
+a { color: var(--verde); }
+
+code {
+    font-family: Consolas, "Cascadia Code", monospace;
+    background: var(--panel-2);
+    border: 1px solid var(--borde);
+    border-radius: 4px;
+    padding: 1px 5px;
+    font-size: 0.9em;
+    color: #f5f5f5;
+}
+
+pre {
+    background: var(--codigo);
+    border: 1px solid var(--borde);
+    border-radius: 8px;
+    padding: 12px 14px;
+    overflow-x: auto;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+pre code { background: none; border: 0; padding: 0; }
+
+/* ===== Estructura: menu a la izquierda, leccion a la derecha ===== */
+.app {
+    display: grid;
+    grid-template-columns: 280px minmax(0, 1fr);
+    min-height: 100vh;
+}
+
+.lateral {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    height: 100vh;
+    overflow-y: auto;
+    background: var(--panel);
+    border-right: 1px solid var(--borde);
+    padding: 24px 18px;
+}
+
+.marca {
+    display: block;
+    font-size: 30px;
+    text-decoration: none;
+    color: white;
+}
+
+.marca span { color: var(--verde); }
+
+.lema { color: var(--suave); font-size: 13px; margin: 6px 0 18px; }
+
+.progreso-barra {
+    height: 8px;
+    background: var(--panel-2);
+    border-radius: 99px;
+    overflow: hidden;
+}
+
+#progreso-relleno {
+    height: 100%;
+    width: 0;
+    background: var(--verde);
+    transition: width 0.4s;
+}
+
+#progreso-texto { font-size: 12px; color: var(--suave); margin: 6px 0 18px; }
+
+.capitulo-menu { margin-bottom: 16px; }
+
+.capitulo-menu h3 {
+    font-size: 15px;
+    color: var(--suave);
+    margin: 0 0 6px;
+}
+
+.capitulo-menu a {
+    display: flex;
+    gap: 8px;
+    align-items: baseline;
+    padding: 6px 8px;
+    border-radius: 6px;
+    color: var(--texto);
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.capitulo-menu a:hover { background: var(--panel-2); }
+.capitulo-menu a.activa { background: var(--azul); color: white; }
+.capitulo-menu .marca-hecha { width: 16px; flex-shrink: 0; color: var(--bien); }
+
+.boton-menu { display: none; }
+
+.contenido {
+    padding: 32px 36px 60px;
+    min-width: 0;
+}
+
+/* ===== Pantalla de inicio ===== */
+.portada {
+    background: var(--azul);
+    border-radius: 16px;
+    padding: 40px 32px;
+    margin-bottom: 32px;
+}
+
+.portada h1 { font-size: 64px; margin: 0; }
+.portada h1 span { color: var(--verde); }
+.portada p { color: white; max-width: 720px; font-size: 17px; }
+
+.pasos {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+    margin-bottom: 32px;
+}
+
+.paso {
+    background: var(--panel);
+    border: 1px solid var(--borde);
+    border-radius: 12px;
+    padding: 18px;
+}
+
+.paso b { color: var(--verde); font-size: 22px; font-family: Impact, sans-serif; }
+
+.tarjetas-capitulos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 16px;
+}
+
+.tarjeta-capitulo {
+    display: block;
+    background: var(--panel);
+    border: 2px solid var(--borde);
+    border-radius: 12px;
+    padding: 20px;
+    color: var(--texto);
+    text-decoration: none;
+    transition: border-color 0.2s, transform 0.2s;
+}
+
+.tarjeta-capitulo:hover { border-color: var(--verde); transform: translateY(-4px); }
+.tarjeta-capitulo h2 { font-size: 26px; margin: 4px 0 8px; }
+.tarjeta-capitulo .numero { color: var(--verde); font-size: 13px; font-weight: bold; text-transform: uppercase; }
+.tarjeta-capitulo .archivo { font-size: 12px; color: var(--suave); }
+
+/* ===== Pantalla de leccion ===== */
+.encabezado-leccion .ruta-capitulo {
+    color: var(--verde);
+    font-weight: bold;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.encabezado-leccion h1 { font-size: 44px; margin: 4px 0 20px; }
+
+.leccion {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 28px;
+    align-items: start;
+}
+
+.leccion.solo-lectura { grid-template-columns: minmax(0, 820px); }
+
+.columna-vista {
+    position: sticky;
+    top: 20px;
+    z-index: 5;
+}
+
+.caja {
+    background: var(--panel);
+    border: 1px solid var(--borde);
+    border-radius: 12px;
+    padding: 18px 20px;
+    margin-bottom: 18px;
+}
+
+.caja h2 { font-size: 20px; margin: 0 0 10px; }
+.caja p:first-of-type { margin-top: 0; }
+
+.caja-referencia { border-left: 4px solid var(--azul); }
+.caja-referencia ul { margin: 0; padding-left: 20px; font-size: 14px; }
+
+.caja-tarea { border-left: 4px solid var(--verde); }
+
+.pistas summary { cursor: pointer; color: var(--verde); font-weight: bold; }
+.pistas li { margin: 6px 0; }
+
+/* Editor de codigo con numeros de linea */
+.editor {
+    display: flex;
+    background: var(--codigo);
+    border: 1px solid var(--borde);
+    border-radius: 10px;
+    overflow: hidden;
+    font-family: Consolas, "Cascadia Code", monospace;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.editor-etiqueta {
+    font-size: 12px;
+    color: var(--suave);
+    margin: 0 0 6px;
+}
+
+.numeros {
+    padding: 12px 10px;
+    text-align: right;
+    color: #4b4b5c;
+    user-select: none;
+    white-space: pre;
+    overflow: hidden;
+    border-right: 1px solid var(--borde);
+    min-width: 42px;
+}
+
+.editor textarea {
+    flex: 1;
+    min-width: 0;
+    min-height: 320px;
+    background: transparent;
+    color: #ececec;
+    border: 0;
+    outline: none;
+    resize: vertical;
+    padding: 12px;
+    font: inherit;
+    line-height: inherit;
+    white-space: pre;
+    overflow: auto;
+    tab-size: 4;
+}
+
+.botones {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 12px;
+}
+
+.boton {
+    border: 0;
+    border-radius: 99px;
+    padding: 9px 18px;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+    background: var(--panel-2);
+    color: var(--texto);
+    border: 1px solid var(--borde);
+}
+
+.boton:hover { border-color: var(--suave); }
+.boton-principal { background: var(--verde); color: black; border-color: var(--verde); }
+.boton-principal:hover { background: white; border-color: white; }
+
+/* Vista previa */
+.barra-vista {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 10px;
+}
+
+.pestanas, .tamanos { display: flex; gap: 6px; }
+
+.pestana {
+    background: var(--panel-2);
+    border: 1px solid var(--borde);
+    color: var(--texto);
+    border-radius: 8px;
+    padding: 6px 12px;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.pestana.activa { background: var(--azul); border-color: var(--azul); color: white; }
+
+.marco-vista {
+    height: 460px;
+    background: #000;
+    border: 1px solid var(--borde);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.marco-vista iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    background: #000;
+    margin: 0 auto;
+}
+
+.marco-vista.celular iframe {
+    width: 375px;
+    max-width: 100%;
+    border-left: 1px dashed #333;
+    border-right: 1px dashed #333;
+}
+
+.nota-meta { font-size: 12px; color: var(--suave); margin: 8px 0 0; }
+
+/* Revision automatica */
+.revision ul { list-style: none; margin: 0; padding: 0; }
+
+.revision li {
+    display: flex;
+    gap: 10px;
+    padding: 6px 0;
+    border-bottom: 1px solid var(--borde);
+    font-size: 14px;
+}
+
+.revision li:last-child { border-bottom: 0; }
+.revision .icono { width: 18px; flex-shrink: 0; font-weight: bold; }
+.revision .si .icono { color: var(--bien); }
+.revision .no .icono { color: var(--rojo); }
+
+.felicidades {
+    background: var(--verde);
+    color: black;
+    border-radius: 12px;
+    padding: 16px 20px;
+    margin-bottom: 18px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.felicidades strong { font-family: Impact, sans-serif; font-size: 24px; text-transform: uppercase; font-weight: normal; }
+.felicidades .boton { background: black; color: white; border-color: black; }
+
+.navegacion-leccion {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 28px;
+}
+
+/* ===== Pantallas medianas: la vista va abajo del editor ===== */
+@media (max-width: 1200px) {
+    .leccion { grid-template-columns: minmax(0, 1fr); }
+    .columna-vista { position: static; }
+}
+
+/* ===== Celular: el menu se esconde y se abre con un boton ===== */
+@media (max-width: 860px) {
+    .app { grid-template-columns: minmax(0, 1fr); }
+
+    .lateral {
+        position: fixed;
+        inset: 0 auto 0 0;
+        width: 290px;
+        z-index: 40;
+        transform: translateX(-100%);
+        transition: transform 0.25s;
+    }
+
+    .lateral.abierta { transform: translateX(0); box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.6); }
+
+    .boton-menu {
+        display: block;
+        position: sticky;
+        top: 0;
+        z-index: 30;
+        width: 100%;
+        border: 0;
+        border-bottom: 1px solid var(--borde);
+        background: var(--panel);
+        color: white;
+        font-weight: bold;
+        text-align: left;
+        padding: 14px 16px;
+        cursor: pointer;
+    }
+
+    .contenido { padding: 20px 16px 48px; }
+    .portada { padding: 28px 20px; }
+    .portada h1 { font-size: 44px; }
+    .pasos { grid-template-columns: minmax(0, 1fr); }
+    .encabezado-leccion h1 { font-size: 32px; }
+    .marco-vista { height: 420px; }
+}

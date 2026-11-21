@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taller NSQK</title>
+    <link rel="stylesheet" href="css/taller.css">
+</head>
+<body>
+
+    <div class="app">
+
+        <!-- Menu de capitulos y lecciones (lo llena taller.js) -->
+        <aside class="lateral" id="lateral">
+            <a href="#" class="marca">Taller <span>NSQK</span></a>
+            <p class="lema">Escribe el código y míralo acomodarse en tiempo real.</p>
+            <div class="progreso">
+                <div class="progreso-barra"><div id="progreso-relleno"></div></div>
+                <p id="progreso-texto">0 de 0 lecciones</p>
+            </div>
+            <nav id="menu"></nav>
+        </aside>
+
+        <button class="boton-menu" id="boton-menu" type="button">☰ Lecciones</button>
+
+        <main class="contenido" id="contenido"></main>
+
+    </div>
+
+    <script src="js/lecciones.js"></script>
+    <script src="js/taller.js"></script>
+</body>
+</html>
